@@ -14,7 +14,8 @@ public class Logger_log4j2 {
         // this will force a reconfiguration
         context.setConfigLocation(file.toURI()); */
 
-        System.setProperty("log4j.configurationFile", "log4j2.properties");
+        System.setProperty("log4j.configurationFile", "log4j2.xml");
+        //System.setProperty("log4j.configurationFile", "log4j2.properties");
         Logger logger = LogManager.getLogger(Logger_log4j2.class);
         logger.info("Logging using log4j 2.x configuration file");
     }

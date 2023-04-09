@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
-    <property name="DEV_HOME" value="logs" />
+    <!-- in value pass the path od directory where logs can be stored -->
+    <property name="HOME" value="logs"/>
 
     <appender name="FILE-AUDIT"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${DEV_HOME}/debug.log</file>
+        <file>${HOME}/logback.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>
                 %d{yyyy-MM-dd HH:mm:ss} - %msg%n
@@ -14,22 +14,20 @@
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- rollover daily -->
-            <fileNamePattern>${DEV_HOME}/archived/logback.%d{yyyy-MM-dd}.%i.log
+            <fileNamePattern>${HOME}/archived/logback.%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
-
     </appender>
 
-    <logger name="com.vipul.web" level="debug"
-            additivity="false">
-        <appender-ref ref="FILE-AUDIT" />
+    <logger name="vipul" level="debug" additivity="false">
+        <appender-ref ref="FILE-AUDIT"/>
     </logger>
 
     <root level="error/info">
-        <appender-ref ref="FILE-AUDIT" />
+        <appender-ref ref="FILE-AUDIT"/>
     </root>
 </configuration>
