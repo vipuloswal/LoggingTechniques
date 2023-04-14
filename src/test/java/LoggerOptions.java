@@ -1,9 +1,8 @@
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
+/*import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;*/
 
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
@@ -12,12 +11,12 @@ public class LoggerOptions {
 
     public static void main(String args[]) {
 
-        //Logging using default java provided logger
+        //Logging using default java provided logger JUL
         java.util.logging.Logger defaultLogger= java.util.logging.Logger.getLogger(LoggerOptions.class.getName());
         defaultLogger.info("Logging using default java logging");
 
-      /*  //Logging using log4j 2. logger
-        Logger log4jLogger = LogManager.getLogger(LoggerOptions.class);
+        /*//Logging using log4j 2.x logger
+        Logger log4jLogger = (Logger) LogManager.getLogger(LoggerOptions.class);
         log4jLogger.error("Logging using log4j2.17.1 java logging");*/
 
         //Logging using slf4j logger
