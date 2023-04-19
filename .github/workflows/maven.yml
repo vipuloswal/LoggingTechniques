@@ -33,11 +33,7 @@ jobs:
     - name: List the current directory
       run: ls -a
       
-    -name: what is the target folder
-      run:|
-      cd target
-      ls a
-
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+    - name: What is the target folder
+      run: |
+        cd target
+        ls -a
